@@ -1,0 +1,15 @@
+<package>
+  <description brief="tmp">
+
+     tmp
+
+  </description>
+  <author>Austin Hendrix</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/tmp</url>
+  <depend package="roscpp"/>
+
+</package>
+
+
