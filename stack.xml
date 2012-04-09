@@ -1,0 +1,9 @@
+<stack>
+  <description brief="linux_computer_monitor">linux_computer_monitor</description>
+  <author>Maintained by Austin Hendrix</author>
+  <license></license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/linux_computer_monitor</url>
+  <depend stack="ros" />
+
+</stack>
