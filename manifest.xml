@@ -9,6 +9,9 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/tmp</url>
   <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+
+  <rosdep name="libsensors4"/>
 
 </package>
 

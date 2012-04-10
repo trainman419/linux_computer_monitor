@@ -1,0 +1,30 @@
+Notes on using libsensors:
+
+Use libsensors4. It supports automatically choosing the default config file, and is newer.
+
+sensors_init() can be called with NULL to use the default config file
+
+Call tree to get sensor data:
+
+chip = sensors_get_detected_chips(NULL, &nr)
+   returns NULL when no more chips. Automatically increments nr
+
+foreach chip:
+   sensors_snprintf_chip_name() to get name
+   sensors_get_adapter_name(&chip->bus) to get another name
+
+   feature = sensors_get_features(chip, &i)
+      returns NULL when no more features. Automatically increments i
+
+   foreach feature:
+      feature->type : feature type constant. SENSORS_FEATURE_*
+      label = sensors_get_label(chip, feature) get human-readable label
+
+      subfeatures can be sensor value, limits, alarms, etc
+      sf = sensors_get_subfeature(chip, feature, SUBFEATURE) get subfeature
+      sensors_get_value(chip, sf->number, &val) get subfeature value into &val
+
+
+We should be able to cache:
+   chips[] (chip, name, adapter name, features[])
+   features[] (feature, label)
